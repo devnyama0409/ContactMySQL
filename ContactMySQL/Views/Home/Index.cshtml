@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>問合せ・トラブル管理システム</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>随時処理</h2>
+        <div class="col-md-6">
+            @Html.ActionLink("問合せ・トラブル対応入力", "Create", "ToiawaseRirekis", null, htmlAttributes: new { @class = "btn btn-primary col-md-12" })
+            @Html.ActionLink("問合せ・トラブル対応検索", "Index", "ToiawaseRirekis", null, htmlAttributes: new { @class = "btn btn-primary col-md-12" })
+        </div>
+        <div class="col-md-6">
+            @Html.ActionLink("問合せ一覧表印刷", "Index", "ToiawaseRirekis", null, htmlAttributes: new { @class = "btn btn-primary col-md-12" })
+            @Html.ActionLink("社福Q&A・システム相談メモ印刷", "Index", "ToiawaseRirekis", null, htmlAttributes: new { @class = "btn btn-primary col-md-12" })
+            @Html.ActionLink("ユーザー別集計印刷", "Index", "ToiawaseRirekis", null, htmlAttributes: new { @class = "btn btn-primary col-md-12" })
+        </div>
+    </div>
+    <div class="col-md-12">
+        <h2>マスタメンテナンス</h2>
+        <div class="col-md-6">
+            @Html.ActionLink("担当者マスタメンテナンス", "Index", "Tantoshas", null, htmlAttributes: new { @class = "btn btn-primary col-md-12" })
+            @Html.ActionLink("法人マスタメンテナンス", "Index", "Tantoshas", null, htmlAttributes: new { @class = "btn btn-primary col-md-12" })
+            @Html.ActionLink("ユーザーマスタメンテナンス", "Index", "Tantoshas", null, htmlAttributes: new { @class = "btn btn-primary col-md-12" })
+            @Html.ActionLink("システムマスタメンテナンス", "Index", "Tantoshas", null, htmlAttributes: new { @class = "btn btn-primary col-md-12" })
+        </div>
+    </div>
+    <div class="col-md-12">
+        <h2>設定</h2>
+        <div class="col-md-12">
+            <a>工事中…</a>
+        </div>
+    </div>
+</div>

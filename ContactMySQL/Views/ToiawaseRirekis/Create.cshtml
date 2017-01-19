@@ -1,0 +1,144 @@
+﻿﻿@model ContactMySQL.Models.ToiawaseRireki
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @*処理日*@
+            @Html.LabelFor(model => model.Shoribi, htmlAttributes: new { @class = "control-label col-md-1" })
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.Shoribi, new { htmlAttributes = new { @class = "form-control datepicker input-sm", @Value = ViewBag.Shoribi } })
+                @Html.ValidationMessageFor(model => model.Shoribi, "", new { @class = "text-danger" })
+            </div>
+
+            @*完了日*@
+            @Html.LabelFor(model => model.Kanryobi, htmlAttributes: new { @class = "control-label col-md-1" })
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.Kanryobi, new { htmlAttributes = new { @class = "form-control datepicker input-sm", @Value = ViewBag.Kanryobi } })
+                @Html.ValidationMessageFor(model => model.Kanryobi, "", new { @class = "text-danger" })
+            </div>
+
+            @*Id(非表示)*@
+            @Html.LabelFor(model => model.Id, htmlAttributes: new { @class = "control-label col-md-1" })
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.Id, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @*担当者*@
+            @Html.LabelFor(model => model.TantoshaId, htmlAttributes: new { @class = "control-label col-md-1" })
+            <div class="col-md-2">
+                @Html.DropDownList("TantoshaId", null, htmlAttributes: new { @class = "form-control input-sm" })
+                @Html.ValidationMessageFor(model => model.TantoshaId, "", new { @class = "text-danger" })
+            </div>
+
+            @*受付者*@
+            @Html.LabelFor(model => model.UketsukeshaMei, htmlAttributes: new { @class = "control-label col-md-1" })
+            <div class="col-md-2">
+                @Html.DropDownList("UketsukeshaId", null, htmlAttributes: new { @class = "form-control input-sm" })
+                @*@Html.EditorFor(model => model.UketsukeshaMei, new { htmlAttributes = new { @class = "form-control input-sm" } })*@
+                @Html.ValidationMessageFor(model => model.UketsukeshaMei, "", new { @class = "text-danger" })
+            </div>
+
+            @*問合せ先*@
+            @Html.LabelFor(model => model.Toiawasesaki, htmlAttributes: new { @class = "control-label col-md-1" })
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.Toiawasesaki, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                @Html.ValidationMessageFor(model => model.Toiawasesaki, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*ユーザ*@
+            @Html.LabelFor(model => model.UserId, htmlAttributes: new { @class = "control-label col-md-1" })
+            <div class="col-md-2">
+                @Html.DropDownList("ShafukuUserId", null, htmlAttributes: new { @class = "form-control input-sm" })
+                @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
+            </div>
+
+            @*相手方担当者*@
+            @Html.LabelFor(model => model.UserTantoshaMei, htmlAttributes: new { @class = "control-label col-md-1" })
+            <div class="col-md-2">
+                @Html.EditorFor(model => model.UserTantoshaMei, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                @Html.ValidationMessageFor(model => model.UserTantoshaMei, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*システム*@
+            @Html.LabelFor(model => model.SystemId, htmlAttributes: new { @class = "control-label col-md-1" })
+            <div class="col-md-2">
+                @Html.DropDownList("SystemId", null, htmlAttributes: new { @class = "form-control input-sm" })
+                @Html.ValidationMessageFor(model => model.SystemId, "", new { @class = "text-danger" })
+            </div>
+
+            @*分類*@
+            @Html.LabelFor(model => model.BunruiId, htmlAttributes: new { @class = "control-label col-md-1" })
+            <div class="col-md-2">
+                @Html.DropDownList("BunruiId", null, htmlAttributes: new { @class = "form-control input-sm" })
+                @Html.ValidationMessageFor(model => model.BunruiId, "", new { @class = "text-danger" })
+            </div>
+
+            @*処理時間*@
+            @Html.LabelFor(model => model.ShoriJikan, htmlAttributes: new { @class = "control-label col-md-1" })
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-xs-6">
+                        @Html.EditorFor(model => model.ShoriJikan, new { htmlAttributes = new { @class = "form-control input-sm" } })
+                        @Html.ValidationMessageFor(model => model.ShoriJikan, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="control-label pull-left">分</div>
+                </div>
+            </div>
+
+            @*重要度*@
+            @Html.LabelFor(model => model.JyuyodoId, "重要度", htmlAttributes: new { @class = "control-label col-md-1" })
+            <div class="col-md-2">
+                @Html.DropDownList("JyuyodoId", null, htmlAttributes: new { @class = "form-control input-sm" })
+                @Html.ValidationMessageFor(model => model.JyuyodoId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*内容*@
+            <div class="col-md-12">
+                @Html.LabelFor(model => model.Naiyo, htmlAttributes: new { @class = "control-label" })
+            </div>
+            <div class="col-md-12">
+                @Html.TextAreaFor(model => model.Naiyo, 5, 80, new { @class = "form-control", style = "max-width:none", placeholder = "問合せ・トラブル内容を入力してください。" })
+                @Html.ValidationMessageFor(model => model.Naiyo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @*対応*@
+            <div class="col-md-12">
+                @Html.LabelFor(model => model.Taio, htmlAttributes: new { @class = "control-label" })
+            </div>
+            <div class="col-md-12">
+                @Html.TextAreaFor(model => model.Taio, 5, 80, new { @class = "form-control", style = "max-width:none", placeholder = "対応を入力してください。" })
+                @Html.ValidationMessageFor(model => model.Taio, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12">
+                @Html.ActionLink("検索", "Index", null, new { @class = "btn btn-primary col-md-1" })
+                <input type="submit" value="登録" class="btn btn-primary col-md-offset-8 col-md-1" />
+                @Html.ActionLink("閉じる", "Index", "Home", null, htmlAttributes: new { @class = "btn btn-primary col-md-offset-1 col-md-1" })
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

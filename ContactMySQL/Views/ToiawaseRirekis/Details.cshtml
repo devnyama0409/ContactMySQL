@@ -1,0 +1,122 @@
+﻿@model ContactMySQL.Models.ToiawaseRireki
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ToiawaseRireki</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Jyuyodo.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Jyuyodo.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shoribi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shoribi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TantoshaId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TantoshaId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserTantoshaMei)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserTantoshaMei)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SystemId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SystemId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BunruiId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BunruiId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShoriJikan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShoriJikan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Naiyo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Naiyo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Taio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Taio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kanryobi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kanryobi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UketsukeshaMei)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UketsukeshaMei)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Toiawasesaki)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Toiawasesaki)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
